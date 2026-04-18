@@ -13,7 +13,43 @@
 
 **21 synchronized research tabs · 6 live data sources · 5-tool LLM agent · multi-agent hedge-fund council · ML + Monte Carlo · global coverage**
 
+![StockPulse AI Terminal](docs/screenshots/01-terminal.png)
+
 </div>
+
+---
+
+## 📸 Gallery
+
+<table>
+<tr>
+<td width="50%"><b>🕯️ Terminal &amp; Candlestick Chart</b><br><img src="docs/screenshots/01-terminal.png" alt="Terminal"/></td>
+<td width="50%"><b>📺 TradingView Terminal</b><br><img src="docs/screenshots/02-tv-terminal.png" alt="TV"/></td>
+</tr>
+<tr>
+<td><b>🎯 Agentic Verdict (Entry / SL / TP)</b><br><img src="docs/screenshots/03-verdict.png" alt="Verdict"/></td>
+<td><b>🏛️ Hedge Fund Council (multi-agent)</b><br><img src="docs/screenshots/04-hf-council.png" alt="HF Council"/></td>
+</tr>
+<tr>
+<td><b>💬 Decisive AI Chat</b><br><img src="docs/screenshots/05-chat.png" alt="Chat"/></td>
+<td><b>🛠️ Tool-calling Agent</b><br><img src="docs/screenshots/06-tool-agent.png" alt="Tool Agent"/></td>
+</tr>
+<tr>
+<td><b>🧪 Strategy Lab (backtester)</b><br><img src="docs/screenshots/07-strategy.png" alt="Strategy"/></td>
+<td><b>🤖 ML Forecast (RandomForest)</b><br><img src="docs/screenshots/08-ml-forecast.png" alt="ML"/></td>
+</tr>
+<tr>
+<td><b>📉 Monte Carlo Risk Simulation</b><br><img src="docs/screenshots/09-risk.png" alt="Risk"/></td>
+<td><b>💰 Fundamentals</b><br><img src="docs/screenshots/10-fundamentals.png" alt="Fundamentals"/></td>
+</tr>
+<tr>
+<td><b>📑 SEC EDGAR Filings</b><br><img src="docs/screenshots/11-sec.png" alt="SEC"/></td>
+<td><b>👥 Insider Transactions</b><br><img src="docs/screenshots/12-insiders.png" alt="Insiders"/></td>
+</tr>
+<tr>
+<td colspan="2"><b>⭐ Persistent Watchlist (SQLite-backed)</b><br><img src="docs/screenshots/13-watchlist.png" alt="Watchlist"/></td>
+</tr>
+</table>
 
 ---
 
