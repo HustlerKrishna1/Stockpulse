@@ -307,7 +307,7 @@ with cc5:
     st.markdown(f"<div style='padding-top:6px'><span class='chip'>{'🟢 AI Connected' if groq_ok else '⚪ No AI key'}</span></div>",
                 unsafe_allow_html=True)
 
-with st.expander("💼 Portfolio (comma-separated tickers)"):
+with st.expander("Portfolio — comma-separated tickers", expanded=False):
     portfolio_raw = st.text_area("Portfolio tickers", value="AAPL, MSFT, NVDA, GOOGL, TSLA",
         label_visibility="collapsed", help="Up to 10 tickers for correlation, perf, risk.")
 portfolio = [t.strip().upper() for t in portfolio_raw.split(",") if t.strip()][:10]

@@ -32,6 +32,20 @@ async def main():
         # Let Streamlit finish rendering
         await page.wait_for_selector('[data-testid="stAppViewContainer"]', timeout=30_000)
         await page.wait_for_timeout(8000)
+        # Wait for Inter/JetBrains Mono fonts to finish loading to avoid garbled labels
+        await page.evaluate("document.fonts.ready")
+        # Hide Material-Symbols ligature icons that flash raw text (e.g. "arrow_right")
+        # before the icon font loads — these are decorative.
+        await page.add_style_tag(content="""
+            /* Hide only the Material-Symbol ligature spans INSIDE expander headers
+               (these render as raw text like 'arrow_right' before the icon font loads). */
+            [data-testid="stExpander"] summary span[translate='no'],
+            [data-testid="stExpander"] details > summary svg + span { font-size: 0 !important; }
+            /* Ensure Streamlit's own checkbox/icon SVGs stay visible */
+            input[type='checkbox'] + div svg,
+            [data-baseweb='checkbox'] svg { opacity: 1 !important; }
+        """)
+        await page.wait_for_timeout(2500)
 
         # First shot — landing view
         await page.screenshot(path=str(OUT / SHOTS[0][0]), full_page=False)
@@ -44,6 +58,8 @@ async def main():
                 tab = page.get_by_role("tab", name=tab_label).first
                 await tab.click(timeout=5000)
                 await page.wait_for_timeout(3500)
+                await page.evaluate("document.fonts.ready")
+                await page.wait_for_timeout(500)
                 await page.screenshot(path=str(OUT / fname), full_page=False)
                 print(f"saved {fname}")
             except Exception as e:
